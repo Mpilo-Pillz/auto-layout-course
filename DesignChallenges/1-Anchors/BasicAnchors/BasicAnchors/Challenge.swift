@@ -38,11 +38,11 @@ class Challenge: UIViewController {
                 let gaplessPlaybackLabel = makeLabel(withText: "Gapless Playback")
                 let gaplessPlaybackSwitch = makeSwitch(isOn: true)
         //
-        //        let hideSongsLabel = makeLabel(withText: "Hide Unplayable Songs")
-        //        let hideSongsSwitch = makeSwitch(isOne: true)
+                let hideSongsLabel = makeLabel(withText: "Hide Unplayable Songs")
+                let hideSongsSwitch = makeSwitch(isOn: true)
         //
-        //        let enableNormalizationLabel = makeLabel(withText: "Enable Audio Normalization")
-        //        let enableNormalizationSwitch = makeSwitch(isOne: true)
+                let enableNormalizationLabel = makeLabel(withText: "Enable Audio Normalization")
+                let enableNormalizationSwitch = makeSwitch(isOn: true)
         //
                 view.addSubview(offlineLabel)
                 view.addSubview(offlineSwitch)
@@ -56,11 +56,11 @@ class Challenge: UIViewController {
                 view.addSubview(gaplessPlaybackLabel)
                 view.addSubview(gaplessPlaybackSwitch)
         //
-        //        view.addSubview(hideSongsLabel)
-        //        view.addSubview(hideSongsSwitch)
+                view.addSubview(hideSongsLabel)
+                view.addSubview(hideSongsSwitch)
         //
-        //        view.addSubview(enableNormalizationLabel)
-        //        view.addSubview(enableNormalizationSwitch)
+                view.addSubview(enableNormalizationLabel)
+                view.addSubview(enableNormalizationSwitch)
 
         // Start your layout here...
         
@@ -75,6 +75,12 @@ class Challenge: UIViewController {
         
         gaplessPlaybackLabel.translatesAutoresizingMaskIntoConstraints = false
         gaplessPlaybackSwitch.translatesAutoresizingMaskIntoConstraints = false
+        
+        hideSongsSwitch.translatesAutoresizingMaskIntoConstraints = false
+        hideSongsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        enableNormalizationSwitch.translatesAutoresizingMaskIntoConstraints = false
+        enableNormalizationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             offlineLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -121,6 +127,27 @@ class Challenge: UIViewController {
         NSLayoutConstraint.activate([
             gaplessPlaybackSwitch.topAnchor.constraint(equalTo: crossfadeMaxLabel.bottomAnchor, constant: 32),
             gaplessPlaybackSwitch.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            hideSongsSwitch.topAnchor.constraint(equalTo: gaplessPlaybackSwitch.bottomAnchor, constant: 32),
+            hideSongsSwitch.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            hideSongsLabel.topAnchor.constraint(equalTo: gaplessPlaybackSwitch.bottomAnchor, constant: 32),
+            hideSongsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            enableNormalizationLabel.topAnchor.constraint(equalTo: hideSongsSwitch.bottomAnchor, constant: 32),
+            enableNormalizationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+        
+        
+        NSLayoutConstraint.activate([
+            enableNormalizationSwitch.topAnchor.constraint(equalTo: hideSongsSwitch.bottomAnchor, constant: 32),
+            enableNormalizationSwitch.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
 
     }
