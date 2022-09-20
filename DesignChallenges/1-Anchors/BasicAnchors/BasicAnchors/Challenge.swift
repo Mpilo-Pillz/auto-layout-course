@@ -30,7 +30,7 @@ class Challenge: UIViewController {
                 let offlineSwitch = makeSwitch(isOn: false)
                 let offlineSublabel = makeSubLabel(withText: "When you go offline, you'll only be able to play the music and podcasts you've downloaded.")
         //
-        //        let crossfadeLabel = makeBoldLabel(withText: "Crossfade")
+                let crossfadeLabel = makeBoldLabel(withText: "Crossfade")
         //        let crossfadeMinLabel = makeSubLabel(withText: "0s")
         //        let crossfadeMaxLabel = makeSubLabel(withText: "12s")
         //        let crossfadeProgressView = makeProgressView()
@@ -48,7 +48,7 @@ class Challenge: UIViewController {
                 view.addSubview(offlineSwitch)
                 view.addSubview(offlineSublabel)
         //
-        //        view.addSubview(crossfadeLabel)
+                view.addSubview(crossfadeLabel)
         //        view.addSubview(crossfadeMinLabel)
         //        view.addSubview(crossfadeProgressView)
         //        view.addSubview(crossfadeMaxLabel)
@@ -68,6 +68,8 @@ class Challenge: UIViewController {
         offlineSwitch.translatesAutoresizingMaskIntoConstraints = false
         offlineSublabel.translatesAutoresizingMaskIntoConstraints = false
         
+        crossfadeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             offlineLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             offlineLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
@@ -82,6 +84,11 @@ class Challenge: UIViewController {
             offlineSublabel.topAnchor.constraint(equalTo: offlineLabel.bottomAnchor, constant: 20),
             offlineSublabel.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
             offlineSublabel.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            crossfadeLabel.topAnchor.constraint(equalTo: offlineSublabel.bottomAnchor, constant: 32),
+            crossfadeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
 
     }
