@@ -26,9 +26,9 @@ class Challenge: UIViewController {
     func setupViews() {
 
         // Comment in incrementally ...
-        //        let offlineLabel = makeLabel(withText: "Offline")
-        //        let offlineSwitch = makeSwitch(isOne: false)
-        //        let offlineSublabel = makeSubLabel(withText: "When you go offline, you'll only be able to play the music and podcasts you've downloaded.")
+//                let offlineLabel = makeLabel(withText: "Offline")
+//                let offlineSwitch = makeSwitch(isOn: false)
+//                let offlineSublabel = makeSubLabel(withText: "When you go offline, you'll only be able to play the music and podcasts you've downloaded.")
         //
         //        let crossfadeLabel = makeBoldLabel(withText: "Crossfade")
         //        let crossfadeMinLabel = makeSubLabel(withText: "0s")
