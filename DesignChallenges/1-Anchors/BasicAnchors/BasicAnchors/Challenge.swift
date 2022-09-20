@@ -26,9 +26,9 @@ class Challenge: UIViewController {
     func setupViews() {
 
         // Comment in incrementally ...
-//                let offlineLabel = makeLabel(withText: "Offline")
-//                let offlineSwitch = makeSwitch(isOn: false)
-//                let offlineSublabel = makeSubLabel(withText: "When you go offline, you'll only be able to play the music and podcasts you've downloaded.")
+                let offlineLabel = makeLabel(withText: "Offline")
+                let offlineSwitch = makeSwitch(isOn: false)
+                let offlineSublabel = makeSubLabel(withText: "When you go offline, you'll only be able to play the music and podcasts you've downloaded.")
         //
         //        let crossfadeLabel = makeBoldLabel(withText: "Crossfade")
         //        let crossfadeMinLabel = makeSubLabel(withText: "0s")
@@ -44,9 +44,9 @@ class Challenge: UIViewController {
         //        let enableNormalizationLabel = makeLabel(withText: "Enable Audio Normalization")
         //        let enableNormalizationSwitch = makeSwitch(isOne: true)
         //
-        //        view.addSubview(offlineLabel)
-        //        view.addSubview(offlineSwitch)
-        //        view.addSubview(offlineSublabel)
+                view.addSubview(offlineLabel)
+                view.addSubview(offlineSwitch)
+                view.addSubview(offlineSublabel)
         //
         //        view.addSubview(crossfadeLabel)
         //        view.addSubview(crossfadeMinLabel)
@@ -63,7 +63,28 @@ class Challenge: UIViewController {
         //        view.addSubview(enableNormalizationSwitch)
 
         // Start your layout here...
+        
+        offlineLabel.translatesAutoresizingMaskIntoConstraints = false
+        offlineSwitch.translatesAutoresizingMaskIntoConstraints = false
+        offlineSublabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            offlineLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            offlineLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            offlineSwitch.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            offlineSwitch.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            offlineSublabel.topAnchor.constraint(equalTo: offlineLabel.bottomAnchor, constant: 20),
+            offlineSublabel.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
+            offlineSublabel.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor)
+        ])
 
     }
+    
 }
 
