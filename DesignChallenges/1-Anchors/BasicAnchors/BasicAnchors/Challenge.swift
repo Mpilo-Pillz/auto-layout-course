@@ -87,8 +87,10 @@ class Challenge: UIViewController {
             offlineLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
+        // below used centerY instead of topAncho so that the switch aligns with the text
         NSLayoutConstraint.activate([
-            offlineSwitch.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            offlineSwitch.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            offlineSwitch.centerYAnchor.constraint(equalTo: offlineLabel.centerYAnchor),
             offlineSwitch.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
@@ -108,16 +110,27 @@ class Challenge: UIViewController {
             crossfadeMinLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
+        // GOT this one completely wrong commented out the wrong and left the correction
+        // also was not working after correcting so I learnt that order matters
+        // always go top to bottom, left to right
+        NSLayoutConstraint.activate([
+//            crossfadeProgressView.centerYAnchor.constraint(equalTo: crossfadeMinLabel.centerYAnchor),
+//            crossfadeProgressView.leadingAnchor.constraint(equalTo: crossfadeMinLabel.trailingAnchor, constant: 4),
+//            crossfadeProgressView.trailingAnchor.constraint(equalTo: crossfadeMaxLabel.leadingAnchor, constant: -4)
+            crossfadeProgressView.centerYAnchor.constraint(equalTo: crossfadeMinLabel.centerYAnchor),
+            crossfadeProgressView.leadingAnchor.constraint(equalTo: crossfadeMinLabel.trailingAnchor, constant: 4),
+            crossfadeProgressView.trailingAnchor.constraint(equalTo: crossfadeMaxLabel.leadingAnchor, constant: -4)
+//            crossfadeProgressView.topAnchor.constraint(equalTo: crossfadeLabel.bottomAnchor, constant: 32),
+//            crossfadeProgressView.leadingAnchor.constraint(equalTo: crossfadeMinLabel.leadingAnchor, constant: 20),
+//            crossfadeProgressView.trailingAnchor.constraint(equalTo: crossfadeMaxLabel.leadingAnchor, constant: -20)
+        ])
+        
         NSLayoutConstraint.activate([
             crossfadeMaxLabel.topAnchor.constraint(equalTo: crossfadeLabel.bottomAnchor, constant: 32),
             crossfadeMaxLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32)
         ])
         
-        NSLayoutConstraint.activate([
-            crossfadeProgressView.topAnchor.constraint(equalTo: crossfadeLabel.bottomAnchor, constant: 32),
-            crossfadeProgressView.leadingAnchor.constraint(equalTo: crossfadeMinLabel.leadingAnchor, constant: 20),
-            crossfadeProgressView.trailingAnchor.constraint(equalTo: crossfadeMaxLabel.leadingAnchor, constant: -20)
-        ])
+        
         
         NSLayoutConstraint.activate([
             gaplessPlaybackLabel.topAnchor.constraint(equalTo: crossfadeMinLabel.bottomAnchor, constant: 32),
