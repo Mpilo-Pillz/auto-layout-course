@@ -20,7 +20,7 @@ class Challenge: UIViewController {
         // Comment in incrementally...
                 let albumImage = makeImageView(named: "rush")
                 let trackLabel = makeTrackLabel(withText: "Tom Sawyer")
-        //        let albumLabel = makeAlbumLabel(withText: "Rush • Moving Pictures (2011 Remaster)")
+                let albumLabel = makeAlbumLabel(withText: "Rush • Moving Pictures (2011 Remaster)")
         //
         //        let playButton = makePlayButton()
         //        let previewStartLabel = makePreviewLabel(withText: "0:00")
@@ -31,7 +31,7 @@ class Challenge: UIViewController {
         //
                 view.addSubview(albumImage)
                 view.addSubview(trackLabel)
-        //        view.addSubview(albumLabel)
+                view.addSubview(albumLabel)
         //
         //        view.addSubview(playButton)
         //        view.addSubview(previewStartLabel)
@@ -55,6 +55,11 @@ class Challenge: UIViewController {
         NSLayoutConstraint.activate([
             trackLabel.topAnchor.constraint(equalTo: albumImage.bottomAnchor, constant: 8),
             trackLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            albumLabel.topAnchor.constraint(equalTo: trackLabel.bottomAnchor, constant: 8),
+            albumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
 //        NSLayoutConstraint.activate([
