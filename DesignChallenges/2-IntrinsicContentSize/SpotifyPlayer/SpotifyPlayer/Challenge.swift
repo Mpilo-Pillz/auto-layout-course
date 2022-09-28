@@ -19,7 +19,7 @@ class Challenge: UIViewController {
 
         // Comment in incrementally...
                 let albumImage = makeImageView(named: "rush")
-        //        let trackLabel = makeTrackLabel(withText: "Tom Sawyer")
+                let trackLabel = makeTrackLabel(withText: "Tom Sawyer")
         //        let albumLabel = makeAlbumLabel(withText: "Rush • Moving Pictures (2011 Remaster)")
         //
         //        let playButton = makePlayButton()
@@ -30,7 +30,7 @@ class Challenge: UIViewController {
         //        let spotifyButton = makeSpotifyButton(withText: "PLAY ON SPOTIFY")
         //
                 view.addSubview(albumImage)
-        //        view.addSubview(trackLabel)
+                view.addSubview(trackLabel)
         //        view.addSubview(albumLabel)
         //
         //        view.addSubview(playButton)
@@ -42,14 +42,19 @@ class Challenge: UIViewController {
 
         // Start your layout here...
         
-//        albumImage.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
-//        albumImage.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)
+        albumImage.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
+        albumImage.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)
         
         NSLayoutConstraint.activate([
             albumImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             albumImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             albumImage.heightAnchor.constraint(equalTo: albumImage.widthAnchor, multiplier: 1),
             albumImage.widthAnchor.constraint(equalToConstant: view.bounds.width)
+        ])
+        
+        NSLayoutConstraint.activate([
+            trackLabel.topAnchor.constraint(equalTo: albumImage.bottomAnchor, constant: 8),
+            trackLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
 //        NSLayoutConstraint.activate([
