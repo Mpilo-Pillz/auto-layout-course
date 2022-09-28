@@ -18,7 +18,7 @@ class Challenge: UIViewController {
     func setupViews() {
 
         // Comment in incrementally...
-        //        let albumImage = makeImageView(named: "rush")
+                let albumImage = makeImageView(named: "rush")
         //        let trackLabel = makeTrackLabel(withText: "Tom Sawyer")
         //        let albumLabel = makeAlbumLabel(withText: "Rush • Moving Pictures (2011 Remaster)")
         //
@@ -29,7 +29,7 @@ class Challenge: UIViewController {
         //
         //        let spotifyButton = makeSpotifyButton(withText: "PLAY ON SPOTIFY")
         //
-        //        view.addSubview(albumImage)
+                view.addSubview(albumImage)
         //        view.addSubview(trackLabel)
         //        view.addSubview(albumLabel)
         //
@@ -41,6 +41,31 @@ class Challenge: UIViewController {
         //        view.addSubview(spotifyButton)
 
         // Start your layout here...
+        
+//        albumImage.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
+//        albumImage.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)
+        
+        NSLayoutConstraint.activate([
+            albumImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            albumImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            albumImage.heightAnchor.constraint(equalTo: albumImage.widthAnchor, multiplier: 1),
+            albumImage.widthAnchor.constraint(equalToConstant: view.bounds.width)
+        ])
+        
+//        NSLayoutConstraint.activate([
+//            albumImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            albumImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//            albumImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//            albumImage.widthAnchor.constraint(equalToConstant: view.bounds.width),
+//
+//        ])
+        
+//        albumImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        albumImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        albumImage.heightAnchor.constraint(equalTo: albumImage.widthAnchor, multiplier: 1).isActive = true
+//        albumImage.widthAnchor.constraint(equalToConstant: view.bounds.width).isActive = true
+        
+        
 
 
     }
