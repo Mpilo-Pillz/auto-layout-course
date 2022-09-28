@@ -71,7 +71,10 @@ class Challenge: UIViewController {
             playButton.widthAnchor.constraint(equalToConstant: buttonHeight)
         ])
         
-        
+        NSLayoutConstraint.activate([
+            previewStartLabel.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+            previewStartLabel.leadingAnchor.constraint(equalTo: playButton.trailingAnchor, constant: 4)
+        ])
         
 //        NSLayoutConstraint.activate([
 //            albumImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
