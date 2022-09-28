@@ -26,10 +26,10 @@ class Challenge: UIViewController {
         //
                 let playButton = makePlayButton()
                 let previewStartLabel = makePreviewLabel(withText: "0:00")
-        //        let previewEndLabel = makePreviewLabel(withText: "0:30")
-        //        let progressView = makeProgressView()
+                let previewEndLabel = makePreviewLabel(withText: "0:30")
+                let progressView = makeProgressView()
         //
-        //        let spotifyButton = makeSpotifyButton(withText: "PLAY ON SPOTIFY")
+                let spotifyButton = makeSpotifyButton(withText: "PLAY ON SPOTIFY")
         //
                 view.addSubview(albumImage)
                 view.addSubview(trackLabel)
@@ -37,10 +37,10 @@ class Challenge: UIViewController {
         //
                 view.addSubview(playButton)
                 view.addSubview(previewStartLabel)
-        //        view.addSubview(progressView)
-        //        view.addSubview(previewEndLabel)
+                view.addSubview(progressView)
+                view.addSubview(previewEndLabel)
         //
-        //        view.addSubview(spotifyButton)
+                view.addSubview(spotifyButton)
 
         // Start your layout here...
         
@@ -75,6 +75,32 @@ class Challenge: UIViewController {
             previewStartLabel.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
             previewStartLabel.leadingAnchor.constraint(equalTo: playButton.trailingAnchor, constant: 4)
         ])
+        
+        NSLayoutConstraint.activate([
+            progressView.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+            progressView.leadingAnchor.constraint(equalTo: previewStartLabel.trailingAnchor, constant: 8)
+        ])
+//        progressView.centerYAnchor.constraint(equalTo: playButton.centerYAnchor).isActive = true
+//        progressView.leadingAnchor.constraint(equalTo: previewStartLabel.trailingAnchor, constant: 8).isActive = true
+        
+        NSLayoutConstraint.activate([
+            previewEndLabel.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+            previewEndLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8)
+        ])
+        
+        NSLayoutConstraint.activate([
+            spotifyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spotifyButton.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 32),
+            spotifyButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        ])
+        
+//        spotifyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        spotifyButton.topAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 32).isActive = true
+//        spotifyButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        
+        
+        
+//        NSLayoutConstraint.activate(<#T##constraints: [NSLayoutConstraint]##[NSLayoutConstraint]#>)
         
 //        NSLayoutConstraint.activate([
 //            albumImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
